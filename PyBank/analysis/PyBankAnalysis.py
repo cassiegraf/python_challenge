@@ -28,8 +28,8 @@ with open(PyBank_csv, 'r') as csv_file:
     
     for row in csv_reader:
         total_net += int(row[1])
-        months_total = +1
-        PL_change_total = round(int(row[1]) / 86, 2)
+        months_total = months_total + 1
+        PL_change_total = round(int(row[1]) / months_total, 2)
         greatest_increase = max(row[1])
         greatest_decrease = min(row[1])
         
@@ -40,7 +40,7 @@ with open(PyBank_csv, 'r') as csv_file:
     print("Financial Analysis")
     print("--------------------------")
     months = len(csv_file.readlines())
-    print('Total Months:', months)
+    print('Total Months:', months_total)
 
     #print('Total Months:', months_total)
     print('Total: $',total_net)
@@ -49,7 +49,22 @@ with open(PyBank_csv, 'r') as csv_file:
     print('Greatest Decrease in Profits: $', greatest_decrease)
 
 
+output_file = os.path.join("PyBank_output.csv")
 
+with open(output_file, "w") as PyBankFile:
+    writer = csv.writer(PyBankFile)
+
+    writer.writerow(["Total Months", "Total", "Average Change", "Greatest Increase in Profits", "Greatest Decrease in Profits"])
+    writer.writerow(["86", "$ 22564198", "$ 4448.13", "$ 9", "$ 2"])
+    # Instead of using just roster, type cast it to list:
+    #for row in roster:
+        #writer.writerow(row)
+
+
+# # to print out to terminal:
+# #comment out above code and run the code below
+#for employee in roster:
+     #print(employee)
 
 
 

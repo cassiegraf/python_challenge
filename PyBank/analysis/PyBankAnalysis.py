@@ -34,7 +34,30 @@ with open(PyBank_csv, 'r') as csv_file:
         PL_change_total = round(int(row[1]) / months_total, 2)
         greatest_increase = max(row[1])
         greatest_decrease = min(row[1])
-        
+    
+
+#try this for reading lines to get greatest increase/decrease
+#line=budget_data.readline()
+#line_before=None or do I use ""
+#line_after=None or do I use ""
+#while line:
+    #print(line)
+    #if line_before is None:
+        #line_before = line
+
+    #if line_after is None:
+        #line_before=line
+
+    #if line !=line_before:
+        #line_after=line
+
+        ###do logic here###
+
+    #line=budget_data.readline()
+
+#OR try storing every line in a dictionary/list and compare them later
+
+
     #total=[]
     #total = 0
     #total=sum(int([1]) for r in csv_reader)

@@ -16,9 +16,11 @@ month_change = []
 months_total = 0
 total_net = 0
 
-#def budget_data(budget):
-    #date = str(budget[0])
-    #profit_loss = int(budget[1])
+#Total Months - Doing a split in the first column, and separating them into its individual columns
+#Net total amount of Profit/Losses - Aggregating the values to get a total number
+#Changes in Profit/Losses - Aggregating the differences between the values, and then averaging those changes.
+#Greatest increase in profits - Looking for the highest value of profits
+#Greatest decrease in profits - Looking for the lowest value of profits.
 
 with open(PyBank_csv, 'r') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
@@ -56,21 +58,6 @@ with open(output_file, "w") as PyBankFile:
 
     writer.writerow(["Total Months", "Total", "Average Change", "Greatest Increase in Profits", "Greatest Decrease in Profits"])
     writer.writerow(["86", "$ 22564198", "$ 4448.13", "$ 9", "$ 2"])
-    # Instead of using just roster, type cast it to list:
-    #for row in roster:
-        #writer.writerow(row)
-
-
-# # to print out to terminal:
-# #comment out above code and run the code below
-#for employee in roster:
-     #print(employee)
-
-
-
-
-
-
 
 #calculate each of the following values:
 

@@ -41,7 +41,7 @@ with open(PyBank_csv, 'r') as csv_file:
         starting_value = int(row[1])
         PL_change += PL_change_total 
         PL_change_total_total = round(PL_change_final / 85, 2)
-        greatest_increase = max(PL_change_total)
+
 
         """PL_change_total = round(int(row[1]) / months_total, 2)
         
